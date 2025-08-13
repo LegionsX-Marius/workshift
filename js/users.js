@@ -19,7 +19,7 @@
   // Poți șterge exemplele și pune datele tale.
   window.PF_PRELOADED_PERSONS = window.PF_PRELOADED_PERSONS || [
     { name: 'Marius', id: '138', grade: 'Director' },
-    { name: 'Maria Ionescu', id: '1002', grade: 'Vice-Director' },
+    { name: 'raqu0', id: '128', grade: 'Vice-Director' },
     { name: 'Andrei Georgescu', id: '2001', grade: 'Medic Specialist' }
   ];
 
