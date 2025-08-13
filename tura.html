@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tura curentă</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg">
+  <div class="logo-wrap">
+  <img src="img/logo.png" alt="Logo" class="logo-animated">
+</div>
+
+  <div class="container">
+    <header class="header">
+      <h1>Tura</h1>
+      <div class="header-actions">
+        <a class="btn small" href="index.html">Dashboard</a>
+        <button id="logout" class="btn small danger">Delogare</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="toprow">
+        <div><strong>Utilizator:</strong> <span id="uName">—</span> (<span id="uGrade">—</span>) | ID: <span id="uId">—</span> | Tura: <span id="uTura">—</span></div>
+      </div>
+
+      <h2>Înregistrare tură</h2>
+      <div id="clockState" class="muted"></div>
+      <div class="grid3">
+        <div>
+          <label>Data (opțional)</label>
+          <input id="dateDay" type="date">
+          <div class="smalltxt">Dacă lași gol, se folosește ziua de azi.</div>
+        </div>
+        <div>
+          <label id="labelStart">Ora start (hh:mm)</label>
+          <input id="timeStart" placeholder="ex. 14:50">
+          <button id="btnStart" class="btn">Începe tura</button>
+        </div>
+        <div>
+          <label id="labelEnd">Ora sfârșit (hh:mm)</label>
+          <input id="timeEnd" placeholder="ex. 18:30">
+          <button id="btnEnd" class="btn">Termin tura</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="toprow">
+        <h2>Turele mele (săptămâna curentă)</h2>
+        <button id="exportCSVMy" class="btn small">Export CSV (ale mele)</button>
+      </div>
+      <div id="weekRangeSelf" class="muted"></div>
+      <table class="data elegant" id="myEntries">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Start</th>
+            <th>Stop</th>
+            <th>Durată (h)</th>
+            <th>Tura</th>
+            <th>Acțiuni</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div id="sumSelf" class="total-box"></div>
+    </section>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => setupTuraPage());
+  </script>
+</body>
+</html>

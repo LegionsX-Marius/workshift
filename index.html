@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard & Management</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg">
+  <div class="logo-wrap">
+  <img src="img/logo.png" alt="Logo" class="logo-animated">
+</div>
+
+  <div class="container">
+    <header class="header">
+      <h1>Dashboard & Management</h1>
+      <div class="header-actions">
+        <a class="btn small" href="login.html">Schimbă utilizator</a>
+        <button id="logout" class="btn small danger">Delogare</button>
+      </div>
+    </header>
+
+    <section id="roleInfo" class="card"></section>
+
+    <section id="adminSection" class="card hidden">
+      <h2>Administrare persoane (Director / Vice-Director)</h2>
+      <div class="grid2">
+        <div>
+          <h3>Adaugă persoană</h3>
+          <label>Nume</label>
+          <input id="p_name" placeholder="Ex: Ion Popescu">
+          <label>ID</label>
+          <input id="p_id" placeholder="Ex: 1234">
+          <label>Grad</label>
+          <select id="p_grade"></select>
+          <button id="addPerson" class="btn">Adaugă</button>
+        </div>
+        <div>
+          <div class="toprow">
+            <h3>Listă persoane</h3>
+            <button id="exportCSVAll" class="btn small">Export CSV (toți)</button>
+          </div>
+          <table class="data" id="personsTable">
+            <thead><tr><th>Nume</th><th>ID</th><th>Grad</th><th>Acțiuni</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="reportAllSection" class="card hidden">
+      <div class="toprow">
+        <h2>Raport săptămânal (toți utilizatorii)</h2>
+        <button id="exportCSVWeek" class="btn small">Export CSV (săptămână)</button>
+      </div>
+      <div id="weekRangeAll" class="muted"></div>
+      <table class="data" id="weeklyAll">
+        <thead><tr><th>Nume</th><th>ID</th><th>Grad</th><th>Ore Săptămână</th><th>Ture</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="reportSelfSection" class="card hidden">
+      <div class="toprow">
+        <h2>Orele mele</h2>
+        <button id="exportCSVSelf" class="btn small">Export CSV (ale mele)</button>
+      </div>
+      <div id="weekRangeSelf" class="muted"></div>
+      <h3>Pe zile (săptămâna curentă)</h3>
+      <table class="data" id="dailySelf">
+        <thead><tr><th>Data</th><th>Ore</th><th>Ture</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <h3>Total săptămânal</h3>
+      <div id="selfTotal" class="total-box"></div>
+    </section>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => setupDashboard());
+  </script>
+</body>
+</html>

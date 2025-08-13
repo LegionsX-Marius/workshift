@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autentificare</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg">
+  <div class="logo-wrap">
+  <img src="img/logo.png" alt="Logo" class="logo-animated">
+</div>
+
+  <div class="container">
+    <header class="header">
+      <h1>Autentificare</h1>
+    </header>
+
+    <section class="card">
+      <div class="grid2">
+        <div>
+          <label>Nume</label>
+          <input id="l_name" placeholder="Ex: Ion Popescu">
+          <label>ID</label>
+          <input id="l_id" placeholder="Ex: 1234">
+          <label>Grad</label>
+          <select id="l_grade"></select>
+
+          <label>Alege tura</label>
+          <select id="l_tura">
+            <option value="1">Tura 1</option>
+            <option value="2">Tura 2</option>
+            <option value="3">Tura 3</option>
+          </select>
+
+          <button id="loginBtn" class="btn">Intră</button>
+          <p class="muted">Trebuie să fii deja adăugat de un Director/Vice-Director pentru a te putea autentifica.</p>
+        </div>
+        <div class="info-box">
+          <strong>Reguli:</strong>
+          <ul>
+            <li>Săptămâna: începe sâmbătă 20:00, se încheie sâmbătă 18:50.</li>
+            <li>Director & Vice-Director: gestionează persoane, văd tot.</li>
+            <li>Șef Spital: poate vedea orele tuturor (fără modificări).</li>
+            <li>Restul: își văd doar orele proprii.</li>
+          </ul>
+          <a class="btn small" href="index.html">Mergi la Dashboard</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => setupLogin());
+  </script>
+</body>
+</html>
